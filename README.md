@@ -11,6 +11,8 @@ C++ Dom Manipulator
 
 
 # Desteklenecek veri türleri
+- ID -> uuid,big integer ve object id parametrelerini alabilir
+- HASHED -> parametre olarak formatını alır
 - Ref -> harici dosya için referans. Ek olarak pointer ile block seçilebilir
 - Poly -> Polygon type
 - Point -> Point Type
@@ -64,6 +66,22 @@ C++ Dom Manipulator
             "age": 32
         }
     ]
+}
+```
+
+## ID
+```json
+{
+    "id": $ID(uuid),
+    "id2": $ID(bigint),
+    "id3": $ID(objectid)
+}
+```
+
+## HASHED
+```json
+{
+    "password": $HASHED(md5)
 }
 ```
 
