@@ -94,7 +94,7 @@ C++ Dom Manipulator
 
 ```json
 {
-    "password": $HASHED(md5)
+    "password": $HASHED("Hello, World","md5")
 }
 ```
 
