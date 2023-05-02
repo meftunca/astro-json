@@ -12,7 +12,7 @@ C++ Dom Manipulator
 
 # Desteklenecek veri türleri
 - ID -> uuid,big integer ve object id parametrelerini alabilir
-- HASHED -> parametre olarak formatını alır
+- HASHED -> parametre olarak formatını alır (md5,sha1...)
 - Ref -> harici dosya için referans. Ek olarak pointer ile block seçilebilir
 - Poly -> Polygon type
 - Point -> Point Type
@@ -79,6 +79,19 @@ C++ Dom Manipulator
 ```
 
 ## HASHED
+
+### Destek Listesi
+- CRC (Cyclic Redundancy Check)
+- MD5 (Message-Digest Algorithm 5)
+- SHA-1 (Secure Hash Algorithm 1)
+- SHA-2 (Secure Hash Algorithm 2)
+- SHA-3 (Secure Hash Algorithm 3)
+- BLAKE2 (optimized for 64-bit platforms)
+- MurmurHash
+- CityHash
+- xxHash
+- SipHash
+
 ```json
 {
     "password": $HASHED(md5)
