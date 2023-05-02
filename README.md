@@ -15,7 +15,11 @@ C++ Dom Manipulator
 - HASHED -> parametre olarak formatını alır (md5,sha1...)
 - Ref -> harici dosya için referans. Ek olarak pointer ile block seçilebilir
 - Poly -> Polygon type
+- Multi-Poly -> Multiple Polygons
 - Point -> Point Type
+- Multi-Point -> Multiple Point
+- Line -> line
+-> Multiple-Line -> Multiple Line
 - Date -> Tarih ve saat formatı
 
 # Örnekler
@@ -105,24 +109,42 @@ C++ Dom Manipulator
 }
 ```
 
-## Poly
+## Poly 
+> En az 3 noktaya sahip vektörel değer
 ```json
 {
     "poly": $Poly([
         [1,2],
         [3,4],
         [5,6]
-    ])
+    ]),
+        "multiPoly": $Poly([
+        [1,2],
+        [3,4],
+        [5,6]
+    ],[
+        [1,2],
+        [3,4],
+        [5,6]
+    ]...),
 }
 ```
 
 ## Point
 ```json
 {
-    "point": $Point(1,2)
+    "point": $Point(1,2),
+    "multiPoint",$Point([1,2],[2,3])
 }
 ```
-
+## Line 
+> En az 2 pointe sahip olan vektörel değer
+```json
+{
+    "line": $Line([[1,2],[[1,2],[2,3]]]), // en az 2 point olarak 1 elemana sahiptir
+    "multiPoint",$Point([[1,2],[[1,2],[2,3]]],[[1,2],[[1,2],[2,3]]]) // en az 2 line formatında elemana sahiptir
+}
+```
 ## Date
 ```json
 {
